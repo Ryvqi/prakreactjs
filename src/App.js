@@ -1,14 +1,18 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counter from './Counter';
+import ToggleMessage from './ToggleMessage';
 
 function App() {
+  const [text, setText] = useState("Edit src/App.js and save to reload.");
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <p>{text}</p>
+        <button onClick={() => setText("You clicked the button!")}>Click me</button>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,6 +21,8 @@ function App() {
         >
           Learn React
         </a>
+        <Counter />
+        <ToggleMessage />
       </header>
     </div>
   );
